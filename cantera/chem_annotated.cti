@@ -11,7 +11,7 @@ ideal_interface(name='surface1',
                 elements="H D T C Ci O Oi N Ne Ar He Si S F Cl Br I X",
                 species="""NOX        OX         NX         OHX
                           NH3X       X(1)       NH2_X(8)   NH_X(9)
-                          H2O_X(10)  N2O_X(11)  H_X(12)    N2X(36)""",
+                          H2O_X(10)  N2O_X(11)   H_X(12)""",
                 site_density=2.634e-09,
                 phases="gas",
           reactions='all',
@@ -276,7 +276,6 @@ species(name='N2O_X(11)',
                      [ 9.61526693E+00, -5.47386513E-03,  3.97655308E-06,
                       -7.31585378E-10,  4.35197965E-14,  3.20923051E+03,
                       -4.57015200E+01])))
-
 species(name='H_X(12)',
         atoms='H:1 X:1',
         thermo=(NASA([100.00, 952.92],
@@ -287,17 +286,6 @@ species(name='H_X(12)',
                      [ 2.80343297E+00, -5.41109881E-04,  4.99544622E-07,
                       -7.55050884E-11,  3.06845145E-15, -5.89928651E+03,
                       -1.59438832E+01])))
-
-species(name='N2X(36)',
-        atoms='N:2 X:1',
-        thermo=(NASA([100.00, 901.88],
-                     [-1.25624696E+00,  3.72147337E-02, -9.15798635E-05,
-                       9.40903832E-08, -3.39887369E-11, -3.81700203E+03,
-                       1.47534501E+01]),
-                NASA([901.88, 5000.00],
-                     [-2.95560642E-01,  9.13295764E-03, -5.25573058E-06,
-                       9.93915425E-10, -6.45038285E-14, -3.02150066E+03,
-                       1.55888265E+01])))
 
 #-------------------------------------------------------------------------------
 # Reaction data
@@ -422,62 +410,3 @@ surface_reaction('OX + H_X(12) <=> X(1) + OHX', [2.800000e+21, 0.0, 11.531])
 
 # surface1 Reaction 20
 surface_reaction('H_X(12) + OHX <=> X(1) + H2O_X(10)', [2.800000e+21, 0.0, 22.139])
-#  Reaction index: Chemkin #21; RMG #36
-#  Template reaction: Surface_Abstraction_vdW
-#  Estimated using template [AdsorbateVdW;Adsorbate1] for rate rule [N-R;*=NH]
-#  Euclidian distance = 3.1622776601683795
-#  Multiplied by reaction path degeneracy 3.0
-#  family: Surface_Abstraction_vdW
-
-# surface1 Reaction 21
-surface_reaction('NH_X(9) + NH3X <=> NH2_X(8) + NH2_X(8)', [4.949007e+19, 0.653, 28.713])
-#  Reaction index: Chemkin #22; RMG #39
-#  Template reaction: Surface_Abstraction_vdW
-#  Estimated using template [AdsorbateVdW;Adsorbate1] for rate rule [N-R;*#N]
-#  Euclidian distance = 2.23606797749979
-#  Multiplied by reaction path degeneracy 3.0
-#  family: Surface_Abstraction_vdW
-
-# surface1 Reaction 22
-surface_reaction('NX + NH3X <=> NH_X(9) + NH2_X(8)', [4.949007e+19, 0.653, 28.713])
-#  Reaction index: Chemkin #23; RMG #45
-#  Template reaction: Surface_Adsorption_Dissociative
-#  Flux pairs: NH3(6), H_X(12); NH3(6), NH2_X(8);
-#  Estimated using template [Adsorbate;VacantSite1;VacantSite2] for rate rule [N;VacantSite1;VacantSite2]
-#  Euclidian distance = 1.0
-#  Multiplied by reaction path degeneracy 1.5
-#  family: Surface_Adsorption_Dissociative
-
-# surface1 Reaction 23
-surface_reaction('X(1) + X(1) + NH3(6) <=> H_X(12) + NH2_X(8)', stick(2.400000e-02, 0.0, 0.0))
-#  Reaction index: Chemkin #24; RMG #46
-#  Template reaction: Surface_Abstraction
-#  Flux pairs: NX, NH_X(9); NH2_X(8), NH_X(9);
-#  Estimated using template [Abstracting;*R-H] for rate rule [:N#*;*-N-H]
-#  Euclidian distance = 3.605551275463989
-#  Multiplied by reaction path degeneracy 2.0
-#  family: Surface_Abstraction
-
-# surface1 Reaction 24
-surface_reaction('NX + NH2_X(8) <=> NH_X(9) + NH_X(9)', [8.359256e+21, -0.018, 7.182])
-#  Reaction index: Chemkin #25; RMG #57
-#  Template reaction: Surface_Adsorption_Dissociative
-#  Flux pairs: H2O(3), OHX; H2O(3), H_X(12);
-#  Estimated using template [Adsorbate;VacantSite1;VacantSite2] for rate rule [H2O;VacantSite1;VacantSite2]
-#  Euclidian distance = 3.0
-#  Multiplied by reaction path degeneracy 2.0
-#  family: Surface_Adsorption_Dissociative
-#  Ea raised from 0.0 to 32.9 kJ/mol to match endothermicity of reaction.
-
-# surface1 Reaction 25
-surface_reaction('X(1) + X(1) + H2O(3) <=> H_X(12) + OHX', stick(3.200000e-02, 0.0, 7.854))
-#  Reaction index: Chemkin #26; RMG #58
-#  Template reaction: Surface_Adsorption_vdW
-#  Flux pairs: X(1), N2X(36); N2(4), N2X(36);
-#  From training reaction 5 used for Adsorbate;VacantSite
-#  Exact match found for rate rule [Adsorbate;VacantSite]
-#  Euclidian distance = 0
-#  family: Surface_Adsorption_vdW
-
-# surface1 Reaction 26
-surface_reaction('X(1) + N2(4) <=> N2X(36)', stick(1.000000e-01, 0.0, 0.0))
