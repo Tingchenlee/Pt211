@@ -181,7 +181,7 @@ species(
 
 #temperature from 523-673K 
 surfaceReactor(  
-    temperature=[(500,'K'),(1500,'K')],
+    temperature=[(400,'K'),(1500,'K')],
     initialPressure=(1.0, 'bar'),
     nSims=6,
     initialGasMoleFractions={

@@ -157,6 +157,36 @@ NH2NO
 2 H u0 p0 c0 {1,S}
 3 X u0 p0 c0
 
+NO2_X
+1 O u0 p2 c0 {3,S} {4,S}
+2 O u0 p2 c0 {3,D}
+3 N u0 p1 c0 {1,S} {2,D}
+4 X u0 p0 c0 {1,S}
+
+HONO
+1 O u0 p2 c0 {3,S} {4,S}
+2 O u0 p2 c0 {3,D}
+3 N u0 p1 c0 {1,S} {2,D}
+4 H u0 p0 c0 {1,S}
+5 X u0 p0 c0
+
+NONDO
+1 O u0 p2 c0 {3,S} {4,S}
+2 O u0 p2 c0 {4,D}
+3 N u0 p1 c0 {1,S} {5,S} {6,S}
+4 N u0 p1 c0 {1,S} {2,D}
+5 H u0 p0 c0 {3,S}
+6 H u0 p0 c0 {3,S}
+
+NON=O.[Pt]
+1 O u0 p2 c0 {3,S} {4,S}
+2 O u0 p2 c0 {4,D}
+3 N u0 p1 c0 {1,S} {5,S} {6,S}
+4 N u0 p1 c0 {1,S} {2,D}
+5 H u0 p0 c0 {3,S}
+6 H u0 p0 c0 {3,S}
+7 X u0 p0 c0
+
 N=N.[Pt]
 1 N u0 p1 c0 {2,D} {3,S}
 2 N u0 p1 c0 {1,D} {4,S}
@@ -171,6 +201,14 @@ ON[Pt]
 4 H u0 p0 c0 {1,S}
 5 X u0 p0 c0 {2,S}
 
+[Pt]NON=O
+1 O u0 p2 c0 {3,S} {4,S}
+2 O u0 p2 c0 {4,D}
+3 N u0 p1 c0 {1,S} {5,S} {6,S}
+4 N u0 p1 c0 {1,S} {2,D}
+5 H u0 p0 c0 {3,S}
+6 X u0 p0 c0 {3,S}
+
 ON(N=O)[Pt]
 1 O u0 p2 c0 {3,S} {5,S}
 2 O u0 p2 c0 {4,D}
@@ -184,6 +222,12 @@ N=O.[Pt]
 2 N u0 p1 c0 {1,D} {3,S}
 3 H u0 p0 c0 {2,S}
 4 X u0 p0 c0
+
+HONO-2
+1 O u0 p2 c0 {3,S} {4,S}
+2 O u0 p2 c0 {3,D}
+3 N u0 p1 c0 {1,S} {2,D}
+4 H u0 p0 c0 {1,S}
 
 N2O
 1 O u0 p2 c0 {2,D}

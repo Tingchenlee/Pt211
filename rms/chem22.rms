@@ -2,6 +2,35 @@ Interfaces:
 - {}
 Phases:
 - Species:
+  - name: NO2
+    radicalelectrons: 1
+    smiles: '[O-][N+]=O'
+    thermo:
+      polys:
+      - Tmax: 1003.6213155097757
+        Tmin: 100.0
+        coefs:
+        - 3.9501779969731015
+        - -0.0011089072250795825
+        - 1.3410132582698823e-05
+        - -1.5310800214869322e-08
+        - 5.310187899411833e-12
+        - 2973.295166547329
+        - 6.194553586958101
+        type: NASApolynomial
+      - Tmax: 5000.0
+        Tmin: 1003.6213155097757
+        coefs:
+        - 4.429841251432512
+        - 0.0028458233179742298
+        - -1.2684981536038345e-06
+        - 2.638458353195268e-10
+        - -2.0220936314894618e-14
+        - 2581.5638070102896
+        - 2.4067955592157104
+        type: NASApolynomial
+      type: NASA
+    type: Species
   - name: He
     radicalelectrons: 0
     smiles: '[He]'
@@ -263,35 +292,6 @@ Phases:
         type: NASApolynomial
       type: NASA
     type: Species
-  - name: H2
-    radicalelectrons: 0
-    smiles: '[H][H]'
-    thermo:
-      polys:
-      - Tmax: 1959.0804531297094
-        Tmin: 100.0
-        coefs:
-        - 3.4353642235162485
-        - 0.00021270942350844047
-        - -2.786229341653473e-07
-        - 3.402655121455635e-10
-        - -7.760279017136295e-14
-        - -1031.3598463574888
-        - -3.9084177316343016
-        type: NASApolynomial
-      - Tmax: 5000.0
-        Tmin: 1959.0804531297094
-        coefs:
-        - 2.7881546368748986
-        - 0.0005876554858175189
-        - 1.590036078696744e-07
-        - -5.527253607726157e-11
-        - 4.3430102377386895e-15
-        - -596.1376647773047
-        - 0.11279901330405337
-        type: NASApolynomial
-      type: NASA
-    type: Species
   name: gas
 - Species:
   - adjlist: '1 N u0 p1 c0 {2,S} {3,S} {4,S}
@@ -475,6 +475,44 @@ Phases:
         - 3.0684514454105265e-15
         - -5899.286514650659
         - -15.943883179615161
+        type: NASApolynomial
+      type: NASA
+    type: Species
+  - adjlist: '1 O u0 p2 c0 {3,S} {4,S}
+
+      2 O u0 p2 c0 {3,D}
+
+      3 N u0 p1 c0 {1,S} {2,D}
+
+      4 X u0 p0 c0 {1,S}
+
+      '
+    name: NO2_X
+    radicalelectrons: 0
+    smiles: '[Pt]ON=O'
+    thermo:
+      polys:
+      - Tmax: 944.7818600250307
+        Tmin: 100.0
+        coefs:
+        - 3.777612732339166
+        - -0.00024243552338253798
+        - 2.2792514847796104e-05
+        - -3.076226776139951e-08
+        - 1.2022720925462433e-11
+        - -22271.749597218623
+        - -10.428155386133552
+        type: NASApolynomial
+      - Tmax: 5000.0
+        Tmin: 944.7818600250307
+        coefs:
+        - 6.560323902693283
+        - 0.0010647642071830298
+        - -6.322242781916416e-08
+        - 2.86672424099368e-11
+        - -4.968259707105997e-15
+        - -23381.71276956122
+        - -26.78653267043228
         type: NASApolynomial
       type: NASA
     type: Species
@@ -690,46 +728,10 @@ Phases:
         type: NASApolynomial
       type: NASA
     type: Species
-  - adjlist: '1 N u0 p1 c0 {2,T}
-
-      2 N u0 p1 c0 {1,T}
-
-      3 X u0 p0 c0
-
-      '
-    name: N#N.[Pt]
-    radicalelectrons: 0
-    smiles: N#N.[Pt]
-    thermo:
-      polys:
-      - Tmax: 901.8811900611493
-        Tmin: 100.0
-        coefs:
-        - -1.2562469558693756
-        - 0.03721473369322473
-        - -9.157986348606946e-05
-        - 9.409038321317995e-08
-        - -3.398873687561033e-11
-        - -3817.002033521797
-        - 14.753450080346747
-        type: NASApolynomial
-      - Tmax: 5000.0
-        Tmin: 901.8811900611493
-        coefs:
-        - -0.29556064206888116
-        - 0.009132957644541952
-        - -5.255730583963394e-06
-        - 9.939154252216766e-10
-        - -6.450382853124572e-14
-        - -3021.5006568200483
-        - 15.588826495642847
-        type: NASApolynomial
-      type: NASA
-    type: Species
   name: surface
 Reactions:
 - kinetics:
-    A: 1.0
+    A: 0.05
     Ea: 0.0
     n: 0.0
     type: StickingCoefficient
@@ -743,7 +745,7 @@ Reactions:
   - O2
   type: ElementaryReaction
 - kinetics:
-    A: 1.0
+    A: 0.8
     Ea: 0.0
     n: 0.0
     type: StickingCoefficient
@@ -922,7 +924,7 @@ Reactions:
   - N2O_X
   type: ElementaryReaction
 - kinetics:
-    A: 5.83e+16
+    A: 3.6e+16
     Ea: 110963.5
     n: 0.0
     type: Arrhenius
@@ -935,7 +937,7 @@ Reactions:
   - NH3X
   type: ElementaryReaction
 - kinetics:
-    A: 2.29e+17
+    A: 3.26e+17
     Ea: 155348.9
     n: 0.0
     type: Arrhenius
@@ -948,7 +950,7 @@ Reactions:
   - NH2_X
   type: ElementaryReaction
 - kinetics:
-    A: 2.61e+17
+    A: 3.42e+17
     Ea: 125437.0
     n: 0.0
     type: Arrhenius
@@ -961,7 +963,7 @@ Reactions:
   - NH_X
   type: ElementaryReaction
 - kinetics:
-    A: 2.8e+17
+    A: 1.21e+17
     Ea: 48245.0
     n: 0.0
     type: Arrhenius
@@ -974,7 +976,7 @@ Reactions:
   - H_X
   type: ElementaryReaction
 - kinetics:
-    A: 2.8e+17
+    A: 1.92e+17
     Ea: 92630.4
     n: 0.0
     type: Arrhenius
@@ -987,35 +989,98 @@ Reactions:
   - OHX
   type: ElementaryReaction
 - kinetics:
-    A: 1.16e+16
-    Ea: 43420.0
-    n: 0.667
-    type: Arrhenius
+    A: 0.9
+    Ea: 0.0
+    n: 0.0
+    type: StickingCoefficient
   products:
-  - NH_X
-  - NH3X
-  radicalchange: 0
+  - NO2_X
+  radicalchange: -1
   reactants:
-  - NH2_X
-  - NH2_X
+  - X
+  - NO2
   type: ElementaryReaction
 - kinetics:
-    A: 3.87e+17
-    Ea: 94560.2
+    A: 330000000000000.0
+    Ea: 115500.0
+    n: 0.0
+    type: Arrhenius
+  products:
+  - OX
+  - 'NO'
+  radicalchange: 1
+  reactants:
+  - NO2_X
+  type: ElementaryReaction
+- kinetics:
+    A: 13000000000000.0
+    Ea: 133000.0
+    n: 0.0
+    type: Arrhenius
+  products:
+  - X
+  - NO2_X
+  radicalchange: 0
+  reactants:
+  - OX
+  - NOX
+  type: ElementaryReaction
+- kinetics:
+    A: 1.2e+17
+    Ea: 25000.0
     n: 0.0
     type: Arrhenius
   products:
   - NX
-  - NH3X
+  - OHX
+  radicalchange: 0
+  reactants:
+  - NOX
+  - H_X
+  type: ElementaryReaction
+- kinetics:
+    A: 3.9e+17
+    Ea: 20000.0
+    n: 0.0
+    type: Arrhenius
+  products:
+  - NOX
+  - OHX
+  radicalchange: 0
+  reactants:
+  - NO2_X
+  - H_X
+  type: ElementaryReaction
+- kinetics:
+    A: 4949006648854429.0
+    Ea: 120135.49675959794
+    n: 0.6527560044952205
+    type: Arrhenius
+  products:
+  - NH2_X
+  - NH2_X
   radicalchange: 0
   reactants:
   - NH_X
-  - NH2_X
+  - NH3X
   type: ElementaryReaction
 - kinetics:
-    A: 0.04569463863518344
-    Ea: 18828.0
-    n: 0.077
+    A: 4949006648854429.0
+    Ea: 120135.49675959794
+    n: 0.6527560044952205
+    type: Arrhenius
+  products:
+  - NH_X
+  - NH2_X
+  radicalchange: 0
+  reactants:
+  - NX
+  - NH3X
+  type: ElementaryReaction
+- kinetics:
+    A: 0.024
+    Ea: 0.0
+    n: 0.0
     type: StickingCoefficient
   products:
   - H_X
@@ -1027,9 +1092,9 @@ Reactions:
   - NH3
   type: ElementaryReaction
 - kinetics:
-    A: 2.22e+17
-    Ea: 78156.9
-    n: 0.0
+    A: 8.359255758500104e+17
+    Ea: 30050.0
+    n: -0.01833333333333333
     type: Arrhenius
   products:
   - NH_X
@@ -1040,9 +1105,9 @@ Reactions:
   - NH2_X
   type: ElementaryReaction
 - kinetics:
-    A: 0.06092618484691126
+    A: 0.032
     Ea: 32862.66287528796
-    n: 0.077
+    n: 0.0
     type: StickingCoefficient
   products:
   - H_X
@@ -1052,31 +1117,5 @@ Reactions:
   - X
   - X
   - H2O
-  type: ElementaryReaction
-- kinetics:
-    A: 5.5e-05
-    Ea: 0.0
-    n: 0.0
-    type: StickingCoefficient
-  products:
-  - N#N.[Pt]
-  radicalchange: 0
-  reactants:
-  - X
-  - N2
-  type: ElementaryReaction
-- kinetics:
-    A: 0.046
-    Ea: 0.0
-    n: 0.0
-    type: StickingCoefficient
-  products:
-  - H_X
-  - H_X
-  radicalchange: 0
-  reactants:
-  - X
-  - X
-  - H2
   type: ElementaryReaction
 Units: {}
