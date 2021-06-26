@@ -89,6 +89,17 @@ H
 multiplicity 2
 1 H u1 p0 c0
 
+HNO
+1 O u0 p2 c0 {2,D}
+2 N u0 p1 c0 {1,D} {3,S}
+3 H u0 p0 c0 {2,S}
+
+NHO_X
+1 O u0 p2 c0 {2,D}
+2 N u0 p1 c0 {1,D} {3,S}
+3 H u0 p0 c0 {2,S}
+4 X u0 p0 c0
+
 NH2NH2
 1 N u0 p1 c0 {2,S} {3,S} {4,S}
 2 N u0 p1 c0 {1,S} {5,S} {6,S}
@@ -187,12 +198,30 @@ NON=O.[Pt]
 6 H u0 p0 c0 {3,S}
 7 X u0 p0 c0
 
-N=N.[Pt]
-1 N u0 p1 c0 {2,D} {3,S}
-2 N u0 p1 c0 {1,D} {4,S}
-3 H u0 p0 c0 {1,S}
+NH2NHOJX
+1 O u0 p2 c0 {2,S} {7,S}
+2 N u0 p1 c0 {1,S} {3,S} {4,S}
+3 N u0 p1 c0 {2,S} {5,S} {6,S}
 4 H u0 p0 c0 {2,S}
-5 X u0 p0 c0
+5 H u0 p0 c0 {3,S}
+6 H u0 p0 c0 {3,S}
+7 X u0 p0 c0 {1,S}
+
+NON[Pt]
+1 O u0 p2 c0 {2,S} {3,S}
+2 N u0 p1 c0 {1,S} {4,S} {7,S}
+3 N u0 p1 c0 {1,S} {5,S} {6,S}
+4 H u0 p0 c0 {2,S}
+5 H u0 p0 c0 {3,S}
+6 H u0 p0 c0 {3,S}
+7 X u0 p0 c0 {2,S}
+
+NO[Pt]
+1 O u0 p2 c0 {2,S} {5,S}
+2 N u0 p1 c0 {1,S} {3,S} {4,S}
+3 H u0 p0 c0 {2,S}
+4 H u0 p0 c0 {2,S}
+5 X u0 p0 c0 {1,S}
 
 ON[Pt]
 1 O u0 p2 c0 {2,S} {4,S}
@@ -200,6 +229,13 @@ ON[Pt]
 3 H u0 p0 c0 {2,S}
 4 H u0 p0 c0 {1,S}
 5 X u0 p0 c0 {2,S}
+
+N=N.[Pt]
+1 N u0 p1 c0 {2,D} {3,S}
+2 N u0 p1 c0 {1,D} {4,S}
+3 H u0 p0 c0 {1,S}
+4 H u0 p0 c0 {2,S}
+5 X u0 p0 c0
 
 [Pt]NON=O
 1 O u0 p2 c0 {3,S} {4,S}
@@ -217,11 +253,18 @@ ON(N=O)[Pt]
 5 H u0 p0 c0 {1,S}
 6 X u0 p0 c0 {3,S}
 
-N=O.[Pt]
+NOX
 1 O u0 p2 c0 {2,D}
 2 N u0 p1 c0 {1,D} {3,S}
-3 H u0 p0 c0 {2,S}
-4 X u0 p0 c0
+3 X u0 p0 c0 {2,S}
+
+[Pt]ONN=O
+1 O u0 p2 c0 {3,S} {6,S}
+2 O u0 p2 c0 {4,D}
+3 N u0 p1 c0 {1,S} {4,S} {5,S}
+4 N u0 p1 c0 {2,D} {3,S}
+5 H u0 p0 c0 {3,S}
+6 X u0 p0 c0 {1,S}
 
 HONO-2
 1 O u0 p2 c0 {3,S} {4,S}

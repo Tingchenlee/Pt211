@@ -284,6 +284,61 @@ Originally from reaction library: Surface/Nitrogen
 
 entry(
     index = 25,
+    label = "OX + NH_X <=> X + NHO_X",
+    degeneracy = 1.0,
+    kinetics = SurfaceArrhenius(A=(4.03e+21,'cm^2/(mol*s)'), n=0, Ea=(73000,'J/mol'), T0=(1,'K'), Tmin=(200,'K'), Tmax=(3000,'K')),
+    longDesc = 
+"""
+Originally from reaction library: Surface/Rebrov_Pt111
+""",
+)
+
+entry(
+    index = 26,
+    label = "OX + NHO_X <=> NOX + OHX",
+    degeneracy = 1.0,
+    kinetics = SurfaceArrhenius(A=(8.05e+23,'cm^2/(mol*s)'), n=0, Ea=(118000,'J/mol'), T0=(1,'K'), Tmin=(200,'K'), Tmax=(3000,'K')),
+    longDesc = 
+"""
+Originally from reaction library: Surface/Rebrov_Pt111
+""",
+)
+
+entry(
+    index = 27,
+    label = "NX + NOX <=> X + X + N2O",
+    degeneracy = 1.0,
+    kinetics = SurfaceArrhenius(A=(1.01e+19,'cm^2/(mol*s)'), n=0, Ea=(98900,'J/mol'), T0=(1,'K'), Tmin=(200,'K'), Tmax=(3000,'K')),
+    longDesc = 
+"""
+Originally from reaction library: Surface/Rebrov_Pt111
+""",
+)
+
+entry(
+    index = 28,
+    label = "X + N2O <=> OX + N2",
+    degeneracy = 1.0,
+    kinetics = StickingCoefficient(A=0.016034, n=0, Ea=(72200,'J/mol'), T0=(1,'K'), Tmin=(200,'K'), Tmax=(3000,'K')),
+    longDesc = 
+"""
+Originally from reaction library: Surface/Rebrov_Pt111
+""",
+)
+
+entry(
+    index = 29,
+    label = "OHX + OHX <=> X + OX + H2O",
+    degeneracy = 1.0,
+    kinetics = SurfaceArrhenius(A=(4.03e+21,'cm^2/(mol*s)'), n=0, Ea=(113000,'J/mol'), T0=(1,'K'), Tmin=(200,'K'), Tmax=(3000,'K')),
+    longDesc = 
+"""
+Originally from reaction library: Surface/Rebrov_Pt111
+""",
+)
+
+entry(
+    index = 30,
     label = "NH_X + NH3X <=> NH2_X + NH2_X",
     degeneracy = 3.0,
     kinetics = SurfaceArrhenius(A=(4.94901e+15,'m^2/(mol*s)'), n=0.652756, Ea=(120.135,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template [AdsorbateVdW;Adsorbate1] for rate rule [N-R;*=NH]
@@ -300,7 +355,7 @@ family: Surface_Abstraction_vdW
 )
 
 entry(
-    index = 26,
+    index = 31,
     label = "NX + NH3X <=> NH_X + NH2_X",
     degeneracy = 3.0,
     kinetics = SurfaceArrhenius(A=(4.94901e+15,'m^2/(mol*s)'), n=0.652756, Ea=(120.135,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template [AdsorbateVdW;Adsorbate1] for rate rule [N-R;*#N]
@@ -317,7 +372,7 @@ family: Surface_Abstraction_vdW
 )
 
 entry(
-    index = 27,
+    index = 32,
     label = "X + X + NH3 <=> H_X + NH2_X",
     degeneracy = 1.5,
     kinetics = StickingCoefficient(A=0.024, n=0, Ea=(0,'kJ/mol'), T0=(1,'K'), Tmin=(200,'K'), Tmax=(3000,'K'), comment="""Estimated using template [Adsorbate;VacantSite1;VacantSite2] for rate rule [N;VacantSite1;VacantSite2]
@@ -334,7 +389,24 @@ family: Surface_Adsorption_Dissociative
 )
 
 entry(
-    index = 28,
+    index = 33,
+    label = "NHO_X + NH2_X <=> NOX + NH3X",
+    degeneracy = 1.0,
+    kinetics = SurfaceArrhenius(A=(1e+13,'m^2/(mol*s)'), n=0, Ea=(0,'kJ/mol'), T0=(1,'K'), Tmin=(200,'K'), Tmax=(3000,'K'), comment="""Estimated using template [Donating;Abstracting] for rate rule [N-H;*NH2]
+    Euclidian distance = 3.605551275463989
+    family: Surface_Abstraction_Single_vdW
+    Ea raised from -62.0 to 0.0 kJ/mol."""),
+    longDesc = 
+"""
+Estimated using template [Donating;Abstracting] for rate rule [N-H;*NH2]
+Euclidian distance = 3.605551275463989
+family: Surface_Abstraction_Single_vdW
+Ea raised from -62.0 to 0.0 kJ/mol.
+""",
+)
+
+entry(
+    index = 34,
     label = "NX + NH2_X <=> NH_X + NH_X",
     degeneracy = 2.0,
     kinetics = SurfaceArrhenius(A=(8.35926e+17,'m^2/(mol*s)'), n=-0.0183333, Ea=(30.05,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template [Abstracting;*R-H] for rate rule [:N#*;*-N-H]
@@ -351,7 +423,69 @@ family: Surface_Abstraction
 )
 
 entry(
-    index = 29,
+    index = 35,
+    label = "NH_X + NHO_X <=> NOX + NH2_X",
+    degeneracy = 1.0,
+    kinetics = SurfaceArrhenius(A=(1.64967e+15,'m^2/(mol*s)'), n=0.652756, Ea=(120.135,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template [AdsorbateVdW;Adsorbate1] for rate rule [N-R;*=NH]
+    Euclidian distance = 3.1622776601683795
+    family: Surface_Abstraction_vdW"""),
+    longDesc = 
+"""
+Estimated using template [AdsorbateVdW;Adsorbate1] for rate rule [N-R;*=NH]
+Euclidian distance = 3.1622776601683795
+family: Surface_Abstraction_vdW
+""",
+)
+
+entry(
+    index = 36,
+    label = "NX + NHO_X <=> N2O_X + H_X",
+    degeneracy = 1.0,
+    kinetics = SurfaceArrhenius(A=(1.64967e+15,'m^2/(mol*s)'), n=0.652756, Ea=(120.135,'kJ/mol'), T0=(1,'K'), comment="""Estimated using template [AdsorbateVdW;Adsorbate1] for rate rule [AdsorbateVdW;*#N]
+    Euclidian distance = 2.0
+    family: Surface_Abstraction_vdW"""),
+    longDesc = 
+"""
+Estimated using template [AdsorbateVdW;Adsorbate1] for rate rule [AdsorbateVdW;*#N]
+Euclidian distance = 2.0
+family: Surface_Abstraction_vdW
+""",
+)
+
+entry(
+    index = 37,
+    label = "OX + NHO_X <=> NO2_X + H_X",
+    degeneracy = 1.0,
+    kinetics = SurfaceArrhenius(A=(2.43621e+15,'m^2/(mol*s)'), n=0.639876, Ea=(120.26,'kJ/mol'), T0=(1,'K'), comment="""Estimated using an average for rate rule [AdsorbateVdW;*=O]
+    Euclidian distance = 0
+    family: Surface_Abstraction_vdW"""),
+    longDesc = 
+"""
+Estimated using an average for rate rule [AdsorbateVdW;*=O]
+Euclidian distance = 0
+family: Surface_Abstraction_vdW
+""",
+)
+
+entry(
+    index = 38,
+    label = "X + NHO_X <=> NOX + H_X",
+    degeneracy = 1.0,
+    kinetics = SurfaceArrhenius(A=(1.90767e+22,'cm^2/(mol*s)'), n=0, Ea=(78.99,'kJ/mol'), T0=(1,'K'), Tmin=(200,'K'), Tmax=(3000,'K'), comment="""From training reaction 7 used for N-H;VacantSite
+    Exact match found for rate rule [N-H;VacantSite]
+    Euclidian distance = 0
+    family: Surface_Dissociation_vdW"""),
+    longDesc = 
+"""
+From training reaction 7 used for N-H;VacantSite
+Exact match found for rate rule [N-H;VacantSite]
+Euclidian distance = 0
+family: Surface_Dissociation_vdW
+""",
+)
+
+entry(
+    index = 39,
     label = "X + X + H2O <=> H_X + OHX",
     degeneracy = 2.0,
     kinetics = StickingCoefficient(A=0.032, n=0, Ea=(32.8627,'kJ/mol'), T0=(1,'K'), Tmin=(200,'K'), Tmax=(3000,'K'), comment="""Estimated using template [Adsorbate;VacantSite1;VacantSite2] for rate rule [H2O;VacantSite1;VacantSite2]
@@ -370,7 +504,7 @@ Ea raised from 0.0 to 32.9 kJ/mol to match endothermicity of reaction.
 )
 
 entry(
-    index = 30,
+    index = 40,
     label = "X + N2 <=> N#N.[Pt]",
     degeneracy = 1.0,
     kinetics = StickingCoefficient(A=0.1, n=0, Ea=(0,'kJ/mol'), T0=(1,'K'), Tmin=(200,'K'), Tmax=(3000,'K'), comment="""From training reaction 5 used for Adsorbate;VacantSite
